@@ -18,9 +18,14 @@ function draw() {
   background(0);
   calcWave();
   renderWave();
-  stroke(40, 60, 90);
+  strokeWeight(3);
+  stroke(10, 10, 150);
+  fill(10, 10, 150)
   line(100 * xspacing, 50,  100 * xspacing, 350);
+  triangle(100 * xspacing - 5, 50, 100 * xspacing + 5, 50, 100 * xspacing, 40)
+  line(100 * xspacing, 350,  600 * xspacing, 350);
 
+  triangle(600 * xspacing, 355, 600 * xspacing, 345, 600 * xspacing + 10, 350)
 }
 
 function calcWave() {
@@ -41,9 +46,9 @@ function renderWave() {
   fill(255);
   // A simple way to draw the wave with an ellipse at each location
   for (let x = 100; x < yvalues.length - 200; x++) {
-    ellipse(x * xspacing, height / 2 + yvalues[x], 2, 2);
+    ellipse(x * xspacing, height / 2 + yvalues[x], 4, 4);
   }
-  fill(250)
+  fill(255, 60, 90)
   ellipse(yvalues.length - 200, height / 2 + yvalues[yvalues.length - 200], 10, 10)
   
 }
